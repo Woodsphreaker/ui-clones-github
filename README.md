@@ -2,14 +2,14 @@
 
 ## Checklist
 
-- [ ] Create a basic structure for project ( CRA )
-- [ ] Create a folder structure for project ( Custom )
-- [ ] Implement and configure Eslint, Prettier and Editor Config 
+- [x] Create a basic structure for project ( CRA )
+- [x] Create a folder structure for project ( Custom )
+- [x] Implement and configure Eslint, Prettier and Editor Config 
 - [ ] Add Plugins: 
   - [ ] React Router Dom
-  - [ ] React Icons
   - [ ] React Toastify
-  - [ ] Styled Components
+  - [x] Styled Components
+  - [x] Styled Icons
   - [ ] Axios
   - [ ] History
   - [ ] Prop-Types
