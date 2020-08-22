@@ -14,7 +14,7 @@
   - [ ] History
   - [ ] Prop-Types
   
-- [ ] Configure global styles ( Styled Components )
+- [x] Configure global styles ( Styled Components )
 - [ ] Create and configure application routes
 - [ ] Create services:
 
