@@ -1,4 +1,4 @@
-# UI Clones - Github
+# REACT WEB PROJECT START WITH TS
 
 ## Checklist
 
