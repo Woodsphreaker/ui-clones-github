@@ -5,4 +5,8 @@ export {
   RiMapPin2Line as PinIcon,
   RiMailLine as MailIcon,
   RiLinksLine as LinkIcon,
+  RiBookMarkLine as BookmarkIcon,
+  RiStarLine as StartIcon,
 } from 'react-icons/ri'
+
+export { AiOutlineFork as FokIcon } from 'react-icons/ai'
