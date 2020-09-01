@@ -28,3 +28,20 @@ export const RightSide = styled.div`
     width: 75%;
   }
 `
+
+export const RepoContainer = styled.div`
+  margin-top: var(--verticalPadding);
+
+  > h2 {
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+  > div {
+    margin-top: 8px;
+
+    display: grid;
+    grid-gap: 16px;
+    grid-template-rows: 1fr;
+  }
+`

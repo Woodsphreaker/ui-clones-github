@@ -1,8 +1,9 @@
 import React from 'react'
 
 import ProfileData from '~/components/ProfileData'
+import RepoCard from '~/components/RepoCard'
 
-import { Container, Main, LeftSide, RightSide } from './styles'
+import { Container, Main, LeftSide, RightSide, RepoContainer } from './styles'
 
 const Profile: React.FC = () => (
   <Container>
@@ -20,7 +21,22 @@ const Profile: React.FC = () => (
           blog=""
         />
       </LeftSide>
-      <RightSide>Right Side</RightSide>
+      <RightSide>
+        <RepoContainer>
+          <h2>RepoCard</h2>
+          {Array.from({ length: 6 }, (_, element) => (
+            <RepoCard
+              key={element}
+              userName="Woods"
+              repoName="React"
+              description="lorem ipsum"
+              language={element % 2 === 0 ? 'javascript' : 'typescript'}
+              stars={8}
+              forks={10}
+            />
+          ))}
+        </RepoContainer>
+      </RightSide>
     </Main>
   </Container>
 )
