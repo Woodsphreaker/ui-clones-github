@@ -1,13 +1,13 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 // Pages
-import Profile from '~/pages/Profile';
-import Repo from '~/pages/Repo';
+import Profile from '~/pages/Profile'
+import Repo from '~/pages/Repo'
 
 // Components
-import Header from '~/components/Header';
-import Footer from '~/components/Footer';
+import Header from '~/components/Header'
+import Footer from '~/components/Footer'
 
 export default () => (
   <Router>
@@ -19,4 +19,4 @@ export default () => (
     </Routes>
     <Footer />
   </Router>
-);
+)
