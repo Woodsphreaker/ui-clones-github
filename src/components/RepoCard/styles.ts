@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components'
 import { BookmarkIcon, StartIcon, FokIcon } from '~/styles/Icons'
 
+type Props = {
+  language: string
+}
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -14,13 +18,13 @@ export const TopSide = styled.div`
   > header {
     display: flex;
     align-items: center;
-    transition: all 1s;
 
     > a {
       margin-left: 8px;
       font-size: 14px;
       font-weight: 600;
       color: var(--link);
+      transition: all 1s;
 
       &:focus,
       &:hover {
@@ -37,7 +41,46 @@ export const TopSide = styled.div`
   }
 `
 
-export const BottomSide = styled.div``
+export const BottomSide = styled.div`
+  ul {
+    display: flex;
+    align-items: center;
+
+    > li {
+      display: flex;
+      align-items: center;
+
+      > svg {
+        margin-right: 5px;
+      }
+
+      > span {
+        font-size: 12px;
+        color: var(--gray);
+      }
+
+      & + li {
+        margin-left: 16px;
+      }
+    }
+  }
+`
+export const LangLegend = styled.div`
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+
+  &.javascript {
+    background: var(--javascript);
+  }
+  &.typescript {
+    background: var(--typescript);
+  }
+  &.other {
+    background: var(--other-language);
+  }
+`
 
 const IconStyled = css`
   width: 16px;

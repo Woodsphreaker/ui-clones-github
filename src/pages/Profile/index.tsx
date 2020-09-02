@@ -31,7 +31,7 @@ const Profile: React.FC = () => (
               repoName="React"
               description="lorem ipsum"
               language={element % 2 === 0 ? 'javascript' : 'typescript'}
-              stars={8}
+              stars={15}
               forks={10}
             />
           ))}

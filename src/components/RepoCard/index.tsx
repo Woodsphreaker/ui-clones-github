@@ -5,6 +5,7 @@ import {
   Container,
   TopSide,
   BottomSide,
+  LangLegend,
   RepoIcon,
   StarIcon,
   ForkIcon,
@@ -19,7 +20,7 @@ interface Props {
   forks?: number
 }
 
-const languageClass = ''
+// const languageClass = ''
 
 const RepoCard: React.FC<Props> = ({
   userName,
@@ -43,14 +44,13 @@ const RepoCard: React.FC<Props> = ({
       <BottomSide>
         <ul>
           <li>
-            <div className={`language ${languageClass}`} />
+            <LangLegend className={language} />
             <span>{language}</span>
           </li>
           <li>
             <StarIcon />
             <span>{stars}</span>
           </li>
-
           <li>
             <ForkIcon />
             <span>{forks}</span>
