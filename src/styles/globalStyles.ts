@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import 'react-calendar-heatmap/dist/styles.css'
 
 export default createGlobalStyle`
   

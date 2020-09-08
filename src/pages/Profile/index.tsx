@@ -2,8 +2,16 @@ import React from 'react'
 
 import ProfileData from '~/components/ProfileData'
 import RepoCard from '~/components/RepoCard'
+import RandomCalendar from '~/components/RandomCalendar'
 
-import { Container, Main, LeftSide, RightSide, RepoContainer } from './styles'
+import {
+  Container,
+  Main,
+  LeftSide,
+  RightSide,
+  RepoContainer,
+  CalendarHeading,
+} from './styles'
 
 const mockLanguage = (element: number) => {
   if (element % 2 === 0) {
@@ -50,6 +58,12 @@ const Profile: React.FC = () => (
             ))}
           </div>
         </RepoContainer>
+
+        <CalendarHeading>
+          Random Calendar (do not represent actual data)
+        </CalendarHeading>
+
+        <RandomCalendar />
       </RightSide>
     </Main>
   </Container>
