@@ -2,6 +2,7 @@ import React from 'react'
 import {
   subYears,
   subMonths,
+  differenceInYears,
   getDaysInMonth,
   getMonth,
   getYear,
@@ -24,8 +25,9 @@ const generateMonthValues = (month: Date) => {
   })
 }
 
-const generateHeatmapValues = () => {
-  const months: number = 11
+const generateHeatmapValues = (startDate: Date) => {
+  const years = differenceInYears(new Date(), startDate)
+  const months: number = years * 12
 
   const data: number[] = Array.from({ length: months }, (_, index) => index + 1)
 
@@ -40,7 +42,6 @@ const generateHeatmapValues = () => {
 const getClassForValue = (item: { count: number }) => {
   if (item) {
     const { count } = item
-    console.log(count)
     return count > 4 ? 'scale-4' : `scale-${count}`
   }
 
@@ -57,7 +58,7 @@ const RandomCalendar: React.FC = () => {
         <Heatmap
           startDate={startDate}
           endDate={endDate}
-          values={generateHeatmapValues()}
+          values={generateHeatmapValues(startDate)}
           gutterSize={3.5}
           showWeekdayLabels
           classForValue={getClassForValue}
