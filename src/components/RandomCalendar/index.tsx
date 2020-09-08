@@ -25,14 +25,15 @@ const generateMonthValues = (month: Date) => {
   })
 }
 
-const generateHeatmapValues = (startDate: Date) => {
-  const years = differenceInYears(new Date(), startDate)
+const generateHeatmapValues = (startDate: Date, endDate: Date) => {
+  const years = differenceInYears(endDate, startDate)
   const months: number = years * 12
 
-  const data: number[] = Array.from({ length: months }, (_, index) => index + 1)
+  const data: number[] = Array.from({ length: months }, (_, index) => index)
 
   const newData = data.reduce((acc: object[], month: number) => {
-    const retroMonth: Date = subMonths(new Date(), month + 1)
+    const retroMonth: Date = subMonths(endDate, month)
+
     return [...acc, ...generateMonthValues(retroMonth)]
   }, [])
 
@@ -58,7 +59,7 @@ const RandomCalendar: React.FC = () => {
         <Heatmap
           startDate={startDate}
           endDate={endDate}
-          values={generateHeatmapValues(startDate)}
+          values={generateHeatmapValues(startDate, endDate)}
           gutterSize={3.5}
           showWeekdayLabels
           classForValue={getClassForValue}
