@@ -5,6 +5,18 @@ import RepoCard from '~/components/RepoCard'
 
 import { Container, Main, LeftSide, RightSide, RepoContainer } from './styles'
 
+const mockLanguage = (element: number) => {
+  if (element % 2 === 0) {
+    return 'javascript'
+  }
+
+  if (element % 3 === 0) {
+    return 'typescript'
+  }
+
+  return 'other'
+}
+
 const Profile: React.FC = () => (
   <Container>
     <Main>
@@ -23,18 +35,20 @@ const Profile: React.FC = () => (
       </LeftSide>
       <RightSide>
         <RepoContainer>
-          <h2>RepoCard</h2>
-          {Array.from({ length: 6 }, (_, element) => (
-            <RepoCard
-              key={element}
-              userName="Woods"
-              repoName="React"
-              description="lorem ipsum"
-              language={element % 2 === 0 ? 'javascript' : 'typescript'}
-              stars={15}
-              forks={10}
-            />
-          ))}
+          <h2>Teste</h2>
+          <div>
+            {Array.from({ length: 10 }, (_, element) => (
+              <RepoCard
+                key={element}
+                userName="Woods"
+                repoName="React"
+                description="lorem ipsum"
+                language={mockLanguage(element)}
+                stars={15}
+                forks={10}
+              />
+            ))}
+          </div>
         </RepoContainer>
       </RightSide>
     </Main>
