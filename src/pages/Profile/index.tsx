@@ -29,7 +29,7 @@ const mockLanguage = (element: number) => {
 }
 
 const Profile: React.FC = () => {
-  const [tabActive, setTabActive] = useState('repo')
+  const [tabActive, setTabActive] = useState('overview')
 
   const handleTabClick = (tabName: string) => {
     setTabActive(tabName)
@@ -54,24 +54,43 @@ const Profile: React.FC = () => {
         <RightSide>
           <TabContainer>
             <Tab
-              active={tabActive === 'repo'}
-              onClick={() => handleTabClick('repo')}
+              active={tabActive === 'overview'}
+              onClick={() => handleTabClick('overview')}
             >
               <div className="content">
                 <RepoIcon />
-                <span className="label">Repositories</span>
-                <span className="number">30</span>
+                <span className="label">Overview</span>
               </div>
             </Tab>
 
             <Tab
-              active={tabActive === 'other'}
-              onClick={() => handleTabClick('other')}
+              active={tabActive === 'repositories'}
+              onClick={() => handleTabClick('repositories')}
             >
               <div className="content">
                 <RepoIcon />
                 <span className="label">Repositories</span>
-                <span className="number">30</span>
+                <span className="number">75</span>
+              </div>
+            </Tab>
+
+            <Tab
+              active={tabActive === 'projects'}
+              onClick={() => handleTabClick('projects')}
+            >
+              <div className="content">
+                <RepoIcon />
+                <span className="label">Projects</span>
+              </div>
+            </Tab>
+
+            <Tab
+              active={tabActive === 'packages'}
+              onClick={() => handleTabClick('packages')}
+            >
+              <div className="content">
+                <RepoIcon />
+                <span className="label">Packages</span>
               </div>
             </Tab>
           </TabContainer>

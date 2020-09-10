@@ -21,6 +21,7 @@ export const Main = styled.div`
 
 export const LeftSide = styled.div`
   padding: 0 var(--horizontalPadding);
+  z-index: 1;
 
   @media screen and (min-width: 768px) {
     width: 25%;
@@ -71,6 +72,7 @@ export const RepoIcon = styled(BookmarkIcon)`
 
 export const TabContainer = styled.div`
   display: flex;
+  align-items: flex-end;
   position: relative;
 
   ::after {
