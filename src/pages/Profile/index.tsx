@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, FormEvent } from 'react'
 
 import ProfileData from '~/components/ProfileData'
 import RepoCard from '~/components/RepoCard'
@@ -11,6 +11,9 @@ import {
   RightSide,
   RepoContainer,
   CalendarHeading,
+  RepoIcon,
+  TabContainer,
+  Tab,
 } from './styles'
 
 const mockLanguage = (element: number) => {
@@ -25,48 +28,79 @@ const mockLanguage = (element: number) => {
   return 'other'
 }
 
-const Profile: React.FC = () => (
-  <Container>
-    <Main>
-      <LeftSide>
-        <ProfileData
-          userName="Woods"
-          name="Carlo Enrico"
-          avatarUrl="https://avatars3.githubusercontent.com/u/22459141?s=460&u=581a6f69d9aa2cac3f7d3cf143484c97d99c82de&v=4"
-          followers={887}
-          following={7}
-          company="WoodsMachine"
-          location="São Paulo, Brazil"
-          email="carlo.enrico@uol.com.br"
-          blog=""
-        />
-      </LeftSide>
-      <RightSide>
-        <RepoContainer>
-          <h2>Teste</h2>
-          <div>
-            {Array.from({ length: 10 }, (_, element) => (
-              <RepoCard
-                key={element}
-                userName="Woods"
-                repoName="React"
-                description="lorem ipsum"
-                language={mockLanguage(element)}
-                stars={15}
-                forks={10}
-              />
-            ))}
-          </div>
-        </RepoContainer>
+const Profile: React.FC = () => {
+  const [tabActive, setTabActive] = useState('repo')
 
-        <CalendarHeading>
-          Random Calendar (do not represent actual data)
-        </CalendarHeading>
+  const handleTabClick = (tabName: string) => {
+    setTabActive(tabName)
+  }
 
-        <RandomCalendar />
-      </RightSide>
-    </Main>
-  </Container>
-)
+  return (
+    <Container>
+      <Main>
+        <LeftSide>
+          <ProfileData
+            userName="Woods"
+            name="Carlo Enrico"
+            avatarUrl="https://avatars3.githubusercontent.com/u/22459141?s=460&u=581a6f69d9aa2cac3f7d3cf143484c97d99c82de&v=4"
+            followers={887}
+            following={7}
+            company="WoodsMachine"
+            location="São Paulo, Brazil"
+            email="carlo.enrico@uol.com.br"
+            blog=""
+          />
+        </LeftSide>
+        <RightSide>
+          <TabContainer>
+            <Tab
+              active={tabActive === 'repo'}
+              onClick={() => handleTabClick('repo')}
+            >
+              <div className="content">
+                <RepoIcon />
+                <span className="label">Repositories</span>
+                <span className="number">30</span>
+              </div>
+            </Tab>
+
+            <Tab
+              active={tabActive === 'other'}
+              onClick={() => handleTabClick('other')}
+            >
+              <div className="content">
+                <RepoIcon />
+                <span className="label">Repositories</span>
+                <span className="number">30</span>
+              </div>
+            </Tab>
+          </TabContainer>
+
+          <RepoContainer>
+            <div>
+              {Array.from({ length: 10 }, (_, element) => (
+                <RepoCard
+                  key={element}
+                  userName="Woods"
+                  repoName="React"
+                  description="lorem ipsum"
+                  language={mockLanguage(element)}
+                  stars={15}
+                  forks={10}
+                />
+              ))}
+            </div>
+          </RepoContainer>
+
+          <CalendarHeading>
+            Random Calendar (do not represent actual data)
+          </CalendarHeading>
+
+          <RandomCalendar />
+        </RightSide>
+      </Main>
+    </Container>
+  )
+}
 
 export default Profile
