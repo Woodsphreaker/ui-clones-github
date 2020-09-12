@@ -6,21 +6,22 @@
 - [x] Create a folder structure for project ( Custom )
 - [x] Implement and configure Eslint, Prettier and Editor Config 
 - [ ] Add Plugins: 
-  - [ ] React Router Dom
+  - [x] React Router Dom
   - [ ] React Toastify
   - [x] Styled Components
   - [x] Styled Icons
-  - [ ] Axios
+  - [x] Axios
   - [ ] History
   - [ ] Prop-Types
   
 - [x] Configure global styles ( Styled Components )
-- [ ] Create and configure application routes
+- [x] Create and configure application routes
 - [ ] Create services:
 
-  - [ ] api
+  - [x] api
   
  ## Live preview
+  https://ui-clone-github.netlify.app/
  
  ## License
  Distributed under the MIT license. See `LICENSE` form more information.
