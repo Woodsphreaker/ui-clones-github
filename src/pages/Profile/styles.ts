@@ -102,6 +102,14 @@ export const Tab = styled.div<{ active: Boolean }>`
     :hover {
       border-bottom: 2px solid var(--orange);
     }
+
+    @media screen and (max-width: 630px) {
+      > svg {
+        display: none;
+      }
+
+      padding: 14px 5px;
+    }
   }
 
   .label {

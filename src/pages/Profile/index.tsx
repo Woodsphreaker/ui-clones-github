@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from 'react'
+import React, { useState } from 'react'
 
 import ProfileData from '~/components/ProfileData'
 import RepoCard from '~/components/RepoCard'
