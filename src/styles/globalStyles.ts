@@ -45,6 +45,7 @@ export default createGlobalStyle`
     --gray-dark: #24292e;
     --orange: #f9826c;
     --logo: #fff;
+    --footer-icon: #c6cbd1;
     --header: #24292e;
     --username: #666;
     --search: rgba(255, 255, 255, 0.13);
